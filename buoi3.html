@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Căn Bản 1</title>
+  </head>
+  <body>
+    <h1>Học Table</h1>
+    <!-- cellpaddding: khoảng cách giữa nội dung trong ô so với đường viền
+         cellspacing: khoảng cách giữa viền trên và viền dưới của đường viền.  -->
+    <table border="1" cellpadding="10px" cellspacing="0px">
+      <tr>
+        <td>dong 1, cot 1</td>
+        <td>dong 1, cot 2</td>
+      </tr>
+      <tr>
+        <td>dong 2, cot 1</td>
+        <td>dong 2, cot 2</td>
+      </tr>
+      <tr>
+        <td>dong 3, cot 1</td>
+        <td>dong 3, cot 2</td>
+      </tr>
+    </table>
+    <hr>
+    <h1>Danh Sách Sinh Viên</h1>
+    
+    <marquee behavior="slide" direction="up">
+      <!-- behavior	Chỉ định hành vi di chuyển của marquee bằng một trang 3 giá trị sau: scroll, slide và alternate.
+         direction	Chỉ định hướng di chuyển của nội dung. Giá trị của direction có thể là left, right, up và down.
+         width	Định nghĩa chiều rộng của marquee theo pixel hoặc %.
+         height	Định nghĩa chiều cao của marquee theo pixel hoặc %.
+         hspace	Định nghĩa chiều cao không gian tính bằng pixcel mà marquee di chuyển trong nó.
+         vspace	Định nghĩa chiều rộng không gian tính bằng pixcel mà marquee di chuyển trong nó.
+         scrolldelay	Định nghĩa độ chễ khi cuộn theo giây.
+         scrollamount	Định nghĩa số lần cuộn theo số
+         loop	Định nghĩa vòng lặp cho nội dung của marquee theo số.
+         bgcolor	Định nghĩa màu nền của marquee. -->
+      <ul>
+        <li> <img src="buoi2/360_F_318140882_seYmbowNlJMFQqoBGxULHUiIVB92uz0c.jpg" alt="" width="80px"> TN1</li>
+        <li>TN2</li>
+        <li>TN3</li>
+        <li>TN4</li>
+      </ul>
+    </marquee>
+
+    <table border="1" width="400px" cellpadding="5" cellspacing="0">
+      <!-- align: canh lề ngang
+           valign: canh lề dọc
+      -->
+      <thead>
+        <tr style="background-color: rgb(95, 95, 226);" height="50px">
+          <th style="color: brown;">Mã SV</th>
+          <th>Họ Tên</th>
+          <th>Điểm Thi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">
+            <table border="1" width="100%" cellspacing="0"> 
+              <tbody>
+                <tr>
+                  <td>ND01</td>
+                  <td>TN01</td>
+                  <td>
+                    <table border="1" width="100%" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td><img src="buoi2/360_F_318140882_seYmbowNlJMFQqoBGxULHUiIVB92uz0c.jpg" alt="" width="80px"></td>
+                          <td>TN02.2</td>
+                        </tr>
+                        <tr>
+                          <td>TN02.3</td>
+                          <td>TN02.4</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ND02</td>
+                  <td>TC01</td>
+                  <td><audio src="audio/y2mate.com - 2h  MCK.mp3" controls></audio></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>Nguyễn Văn A</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>Nguyễn Văn B</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center" bgcolor="gray">SV003 đã ... !</td>
+        </tr>
+        <tr>
+          <td><video src="audio/246548992_454482986098778_5705920911737882129_n.mp4" controls width="400px" height="300px"></video></td>
+          <td>Trần Văn D</td>
+          <td>4</td>
+        </tr>
+        <tfoot>
+          <!-- colspan và rowspan giúp hợp nhất (merge) các phần tử gần nhau của các hàng và các cột trong table -->
+          <tr>
+            <td colspan="2">Tổng SV</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td colspan="3">Bản quyền bởi IT <b style="color: red;">&reg;</b> 2023</td>
+          </tr>
+        </tfoot>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Cơ Bản 01</title>
+</head>
+<body>
+    <h1>lấy dữ liệu radio</h1>
+    <form action="">
+        <label for="">Chọn lớp:</label>
+        <label for=""><input type="radio" name="rdlop" id="rdlop1" value="lop1">1</label>
+        <label for=""><input type="radio" name="rdlop" id="rdlop2" value="lop2">2</label>
+        <label for=""><input type="radio" name="rdlop" id="rdlop3" value="lop3">3</label>
+        <label for=""><input type="radio" name="rdlop" id="rdlop4" value="lop4">4</label>
+        <label for=""><input type="radio" name="rdlop" id="rdlop5" value="lop5">5</label>
+
+        <button type="button" onclick="chonlop();">ok</button>
+    </form>
+    <script>
+        function chonlop(){
+            let luachonlop = ' ';
+
+            let listthongtinlop = document.getElementsByName('rdlop');
+            let tongrdlop = listthongtinlop.length;
+            for(let i = 0; i<tongrdlop; i++){
+                let phantuDangXet = listthongtinlop[i];
+                if(phantuDangXet.checked){
+                    luachonlop = phantuDangXet.value;
+                }
+            }
+            alert('Lớp bạn chọn là : ' + luachonlop)
+        }
+    </script>
+</body>
+</html>

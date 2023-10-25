@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div.background {
+      background: url("../image/y_nghia_hoa_hong_a3efe1fd01cc435a8c85d1ddfd71748f.webp")
+      /* repeat/no-repeat: lặp lại/không lặp lại hình ảnh theo cả 2 chiều */
+        repeat;
+      border: 1px solid black;
+    }
+
+    div.transbox {
+      margin: 30px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      /* opacity: Tạo hiểu ứng trong suốt, mờ ảo cho các thành phần như ảnh, chữ, khối nền */
+      opacity: 0.6;
+    }
+
+    div.transbox p {
+      margin: 3%;
+      font-weight: bold;
+      color: #000000;
+    }
+  </style>
+  <body>
+    <div class="background">
+      <div class="transbox">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores,
+          necessitatibus hic aliquam suscipit nam nisi quod soluta quia, dolorem
+          corrupti voluptates sint ab repudiandae. Nemo vero voluptatum porro
+          repudiandae exercitationem.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

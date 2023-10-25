@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Web Cơ Bản 01</title>
+  </head>
+  <style>
+    #box1 {
+      width: 300px;
+      height: 100px;
+      background-color: aquamarine;
+      box-sizing: border-box;
+      /* - Thuộc Tính Margin - */
+      /* margin-left: 50px;
+        margin-top: 30px;
+        margin-right: 20px;
+        margin-bottom: 40px; */
+
+      /* thuộc tính gom nhóm: viết theo kiểu tường minh
+                                Top Right Bottom Left
+        */
+      /* margin: 30px 20px 40px 50px; */
+
+      /* thuộc tính gom nhóm: viết theo cặp
+                            Top Bottom - Left Right
+        */
+      /* margin: 20px 40px */
+
+      /* thuộc tính gom chung */
+      margin: 50px;
+
+      /* - Thuộc Tính Padding - */
+
+      /* padding-left: 30px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      padding-right: 40px; */
+
+      /* padding: 20px 40px 10px 30px; */
+
+      /* padding: 20px 40px; */
+
+      padding: 20px;
+
+      /* - Thuộc Tính Border -   */
+      /* border-left: 10px solid black;
+      border-top: 5px dashed red;
+      border-right: 10px solid blue;
+      border-bottom: 2px double gray; */
+
+      border: 3px solid black;
+    }
+    #box2 {
+      width: 200px;
+      height: 100px;
+      background-color: rgb(239, 74, 140);
+    }
+    .khung-co-dinh {
+      width: 40px;
+      height: 20px;
+      text-align: center;
+      border-radius: 5px;
+      background-color: rgb(160, 160, 8);
+      /* Position trong CSS được sử dụng với mục đích định vị vị trí hiển thị của các phần tử thẻ HTML
+            position: static.
+            position: relative.
+            position: fixed.
+            position: absolute.
+            position: sticky.
+        */
+      position: fixed;
+      /* canh theo chiều dọc: là Bottom or Top */
+      bottom: 30px;
+      /* canh theo chiều ngang:là Left or Right */
+      right: 30px;
+    }
+    .sanpham {
+      border: 1px solid red;
+      width: 500px;
+      height: 500px;
+      /* 1,2: cha "1.relative" làm chuẩn, con "2.absolute" căn theo */
+      /* 1 */
+      position: relative;
+      /* CSS3 */
+      /* vendor prefixers */
+      box-shadow: 13px 13px 15px 7px rgba(0, 0, 0, 0.69); /* mặc định */
+      -webkit-box-shadow: 13px 13px 15px 7px rgba(0, 0, 0, 0.69); /* hỗ trợ chrome, safari, ios, android */
+      -moz-box-shadow: 13px 13px 15px 7px rgba(0, 0, 0, 0.69); /* hỗ trợ mozilla firefox */
+      -o-box-shadow: 13px 13px 15px 7px rgba(0, 0, 0, 0.69); /* hỗ trợ opera */
+      -ms-box-shadow: 13px 13px 15px 7px rgba(0, 0, 0, 0.69); /* hỗ trợ microsoft edge, iternet explorer */
+    }
+    .image {
+      width: 100%;
+      height: 100%;
+      /* object-fit được sử dụng để chỉ định cách thay đổi kích thước của <img> hoặc <video> để phù hợp với vùng chứa của nó. */
+    }
+    .sale {
+      width: 40px;
+      background-color: orange;
+      text-align: center;
+      border-radius: 5px;
+      /* 2 */
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+    .new {
+      width: 50px;
+      height: 20px;
+      text-align: center;
+      border-radius: 5px;
+      background-color: red;
+      color: #fff;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+    .dangky {
+      width: 300px;
+      text-align: center;
+      background: rgb(195, 193, 225);
+      background: radial-gradient(
+        circle,
+        rgba(195, 193, 225, 0.272233893557423) 0%,
+        rgba(221, 214, 187, 0.7120098039215687) 19%,
+        rgba(182, 216, 199, 1) 36%,
+        rgba(119, 213, 219, 1) 51%,
+        rgba(212, 174, 207, 0.15738795518207283) 69%,
+        rgba(200, 200, 225, 1) 85%,
+        rgba(149, 217, 231, 1) 100%
+      );
+    }
+    body {
+      /* background-image: đường dẫn image  */
+      /* background-image: url('../image/white-background-with-zigzag-pattern-design_1017-33197.avif'); 
+      width: 100%;
+      height: 100%; 
+      /* background-repeat: để thiết lập "sự lặp lại của hình nền" cho phần tử HTML */
+      /* background-repeat: no-repeat; */
+      /* background-position dùng để thiết lập "vị trí của hình nền" trong phần tử HTML */
+      /* background-position-x: right;
+        background-position-y: top;   */
+
+      /* background: url('../image/white-background-with-zigzag-pattern-design_1017-33197.avif') no-repeat right top; */
+    }
+    #css {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+
+      /* text-shadow: đổ bóng */
+      /* vendor prefixers */
+      text-shadow: 13px -8px 2px #ce42b4;
+      -webkit-text-shadow: 13px -8px 2px #ce42b4;
+      -ms-text-shadow: 13px -8px 2px #ce42b4;
+      -o-text-shadow: 13px -8px 2px #ce42b4;
+      -moz-text-shadow: 13px -8px 2px #ce42b4;
+      /* text-transform dùng để điều chỉnh văn bản sang dạng chữ in hoa hoặc chữ thường. */
+      text-transform: uppercase;
+      /*  letter-spacing được dùng để định dạng khoảng cách giữa các ký tự trong một đoạn văn bản */
+      letter-spacing: 0.2rem;
+      /* word-spacing thiết lập khoảng cách giữa các từ của văn bản text, hoặc giữa các phần tử HTML, nó nhận giá trị chiều dài hoặc normal */
+      word-spacing: 20px;
+      /* display cho phép bạn xác định sự xuất hiện của các phần tử trang một cách khác đi so với cài đặt mặc định của chúng. */
+      display: table-cell;
+      /* EM trong CSS sẽ được tính toán dựa trên kích thước font-size của html(root). Nếu chúng ta không set cho HTML root một giá trị font-size, giá trị mặc định của font-size khi đó sẽ là 16px. */
+      /* ----- em, rem, px, ex, % ----- */
+      /* sử dụng em, rem để phù hợp với các thiết bị */
+      font-size: 1.5rem;
+    }
+    .them {
+      color: rgb(228, 57, 57);
+      font-weight: 500;
+      /* text-decoration để xác định kiểu đường gạch chân, gạch trên hoặc gạch xuyên qua được áp dụng cho văn bản */
+      /* text-decoration: line-through; */
+    }
+    .noidung {
+      font-size: 1rem;
+    }
+    .hop1 {
+      width: 50px;
+      height: 50px;
+      background-color: rebeccapurple;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      /*  z-index là thuộc tính thiết lập thứ tự xếp chồng lên nhau của một phần tử vị trí / từ 0 - 9999 */
+      z-index: 10;
+    }
+    .hop2 {
+      width: 50px;
+      height: 50px;
+      background-color: rgb(51, 153, 71);
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 5;
+    }
+    .hop3 {
+      width: 50px;
+      height: 50px;
+      background-color: rgb(153, 51, 71);
+      position: fixed;
+      top: 40px;
+      left: 40px;
+      z-index: 2;
+    }
+    /* các thuộc tính thuộc boxes: margin/border/padding phần tử con sẽ không thừa kế */
+  </style>
+  <body>
+    <div class="hop1">Hộp 1</div>
+    <div class="hop2">Hộp 2</div>
+    <div class="hop3">Hộp 3</div>
+    <span id="css">Học CSS <span class="them">Màu Mè</span></span>
+    <p class="noidung">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet
+      euismod orci, sit amet gravida est pharetra nec. Nullam sagittis, neque
+      sit amet dictum tincidunt, massa neque blandit nisl, vitae mattis nunc
+      nibh vel libero.
+    </p>
+    <div class="dangky"><h1>Đăng Ký Khóa Học</h1></div>
+    <div class="khung-co-dinh">Zalo</div>
+    <div class="sanpham">
+      <img
+        src="../image/0x0-1680334881652426631999.jpeg"
+        class="image"
+        alt=""
+      />
+      <div class="sale">Sale 15%</div>
+      <div class="new">NEW</div>
+    </div>
+    <div>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>      
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>      
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>      
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+    </div>
+  </body>
+</html>

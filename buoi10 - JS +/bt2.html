@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="day">
+        <script>
+            for(let i = 1; i<=31; i++){
+                document.write('<option value="'+ i +'"> Ngày '+ i +'</option>')
+            }
+        </script>
+    </select>
+    <select name="month">
+        <script>
+            for(let i = 1; i<=12; i++){
+                document.write('<option value="'+ i +'">Tháng '+ i +'</option>')
+            }
+        </script>
+    </select>
+    <select name="year">
+        <script>
+            for(let i = 1998; i<=2050; i++){
+                document.write('<option value="'+ i +'">Năm '+ i +'</option>')
+            }
+        </script>
+    </select>
+</body>
+</html>

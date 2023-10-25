@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Cơ Bản 01</title>
+  </head>
+  <style>
+    #div1 {
+      width: 490px;
+      height: 100px;
+      background-color: brown;
+      float: left;
+      margin-right: 10px;
+    }
+    #div2 {
+      width: 490px;
+      height: 100px;
+      background-color: orange;
+      float: left;
+      margin-right: 10px;
+    }
+    #div3 {
+      width: 490px;
+      height: 100px;
+      background-color: rgb(0, 255, 94);
+      float: left;
+    }
+    #div4 {
+      width: 1490px;
+      height: 30px;
+      background-color: rgb(116, 29, 209);
+      margin-right: 10px;
+    }
+    #div5 {
+      width: 490px;
+      height: 300px;
+      background-color: rgb(0, 26, 255);
+      float: left;
+      margin-right: 10px;
+    }
+    #div6 {
+      width: 990px;
+      height: 300px;
+      background-color: rgb(222, 173, 24);
+      float: left;
+      margin-right: 10px;
+    }
+    #div7 {
+        width: 740px;
+        height: 60px;
+        background-color: cadetblue;
+        float: left;
+        margin-right: 10px;
+    }
+    #div8 {
+        width: 740px;
+        height: 60px;
+        background-color: rgb(238, 73, 73);
+        float: left;
+    }
+    #left{
+        width: 245px;
+        height: 100px;
+        background-color: chocolate;
+        float: left;
+    }
+    #L1{
+        width: 245px;
+        height: 50px;
+        background-color: aqua;
+    }
+    #L2{
+        width: 122.25px;
+        height: 50px;
+        background-color: rgb(79, 108, 108);
+        float: left;
+    }
+    #L3{
+        width: 122.25px;
+        height: 50px;
+        background-color: rgb(173, 175, 208);
+        float: left;
+    }
+    #right{
+        width: 245px;
+        height: 100px;
+        background-color: rgb(171, 210, 30);
+        float: right;
+    }
+    /* clear: được sử dụng để xóa bỏ ảnh hướng của float trên cạnh trái, cạnh phải hoặc cả hai của box phần tử */
+    .clear-fix {
+      clear: both;
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <div id="div1">
+        <div id="left">
+            <div id="L1">L1</div>
+            <div id="L2">L2</div>
+            <div id="L3">L3</div>
+        </div>
+        <div id="right">Right</div>
+    </div>
+    <div id="div2">Div2</div>
+    <div id="div3">Div3</div>
+    <div class="clear-fix"></div>
+    <div id="div4">Div4</div>
+    <div class="clear-fix"></div>
+    <div id="div5">Div5</div>
+    <div id="div6">Div6</div>
+    <div class="clear-fix"></div>
+    <div id="div7">Div7</div>
+    <div id="div8">Div8</div>
+
+  </body>
+</html>

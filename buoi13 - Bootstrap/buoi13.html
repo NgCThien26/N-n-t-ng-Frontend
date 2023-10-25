@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../image/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../image/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../image/favicon_io/favicon-16x16.png"
+    />
+    <!-- liên kết css bootstrap -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      border: 1px solid red;
+    }
+  </style>
+  <body>
+    <h1 style="text-align: center">Layout</h1>
+    <hr />
+    <div class="container">
+      <div class="row">
+        <!-- trong 1 row tổng số col bắt buộc phải = 12
+              col-, col-sm-, col-md-, col-lg-, con-xl- : độ rộng theo từng thiết bị
+        -->
+        <div
+          class="col-12 col-md-5 col-lg-3 col-xl-1"
+          style="background-color: aqua"
+        >
+          Logo
+        </div>
+        <div
+          class="col-12 col-md-7 col-lg-9 col-xl-11"
+          style="background-color: aquamarine"
+        >
+          Tên Công Ty
+        </div>
+      </div>
+
+      <!-- gõ nhanh: .row = <div class="row"></div> / tương tự col -->
+      <div class="row">
+        <div class="col-md-12" style="background-color: blanchedalmond">
+          Menu Ngang
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3" style="background-color: rgb(220, 133, 133)">Sidebar</div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-3">SP1 <br> Name SP: ...</div>
+            <div class="col-3">SP2 <br> Name SP: ...</div>
+            <div class="col-3">SP3 <br> Name SP: ...</div>
+            <div class="col-3">SP4 <br> Name SP: ...</div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              SPNB1 <br />
+              Giá: .....
+            </div>
+            <div class="col-6">
+              SPNB2 <br />
+              Giá: .....
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4" style="background-color: chocolate">Footer 1</div>
+        <div class="col-md-4" style="background-color: cornflowerblue">
+          Footer 2
+        </div>
+        <div class="col-md-4" style="background-color: rgb(123, 182, 182)">
+          Footer 3
+        </div>
+      </div>
+    </div>
+
+    <!-- liên kết thư viện jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- liên kết thư viện bootstrap -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

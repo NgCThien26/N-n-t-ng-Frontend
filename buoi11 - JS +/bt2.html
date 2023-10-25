@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Cơ Bản 01</title>
+  </head>
+  <body>
+    <h1>lấy dữ liệu checkbox</h1>
+    <label for="">Topping</label>
+    <br />
+    <label for="chkTopping_1"
+      ><input
+        type="checkbox"
+        name="chkTopping"
+        id="chkTopping_1"
+        value="5000"
+      />Bánh Plan (5k) </label
+    ><br />
+    <label for="chkTopping_2"
+      ><input
+        type="checkbox"
+        name="chkTopping"
+        id="chkTopping_2"
+        value="3000"
+      />Sữa Thêm (3k) </label
+    ><br />
+    <label for="chkTopping_3"
+      ><input
+        type="checkbox"
+        name="chkTopping"
+        id="chkTopping_3"
+        value="5000"
+      />Trân Châu (5k) </label
+    ><br />
+    <label for="chkTopping_4"
+      ><input
+        type="checkbox"
+        name="chkTopping"
+        id="chkTopping_4"
+        value="5000"
+      />Phô Mai (5k) </label
+    ><br />
+    <button
+      type="button"
+      name="btnDatHang"
+      id="btnDatHang"
+      onclick="laythongtindathang();"
+    >
+      Đặt Hàng
+    </button>
+    <script>
+        function laythongtindathang(){
+        let LuaChonTopping = " ";
+        let listElmLuaChonTopping = document.getElementsByName("chkTopping");
+        let tongsophantuChk = listElmLuaChonTopping.length;
+        for (let i = 0; i < tongsophantuChk; i++) {
+          phantuDangXet = listElmLuaChonTopping[i];
+          if (phantuDangXet.checked) {
+            LuaChonTopping += phantuDangXet.value + ",";
+          }
+        }
+        alert("Topping là : " + LuaChonTopping);
+      }
+    </script>
+  </body>
+</html>

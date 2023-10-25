@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: red">
+      Học Toán Tử "Operators" <br />
+      | + | - | * | / | % |<br>
+      | a++ | a-- | ++a | --a |
+    </h1>
+
+    <h1>1. Toán Tử So Sánh</h1>
+    <pre>
+    == : bằng
+    != : không bằng
+    >  : lớn hơn
+    >= : lớn hơn hoặc bằng
+    <  : bé hơn
+    <= : bé hơn hoặc bằng
+</pre
+    >
+
+    <h1>2. Toán Tử Logic</h1>
+    <pre>
+    'And(&&)' 
+        vd: expr1 && expr2 : trả về true nếu expr1 và expr2 đều là true
+    'Or(||)'
+        vd: expr1 || expr2 : trả về true nếu expr1 hoặc expr2 đều là true
+    'Not(!)'
+        vd: !expr          : trả về giá trị false nếu biểu thức đúng và trả về giá trị true nếu biểu thức sai
+</pre
+    >
+    <h1>3. Toán Tử Trên Chuỗi</h1>
+    <pre>
+    "cộng chuỗi"
+        vd: var a = "chuỗi 1"; var b = "chuỗi 2"
+        alert(a + b); // chuỗi 1chuỗi 2
+    "cộng chuỗi với số"
+        vd: alert("9" + 9) // 99
+    "chuyển chuỗi sang số" // parseInt : hàm chuyển đổi chuỗi thành số nguyên
+        vd: alert(parseInt("9") + 9); // 18
+    </pre>
+    <h1>4.Toán tử ba ngôi JS - Toán tử điều kiện</h1>
+    <pre>
+    "let name = (condition) ? value1: value2;"
+    Nhận giá trị value1 nếu điều kiện là true, nhận value2 nếu điều kiện false. Đây là cách viết ngắn ngọn của lệnh if, câu lệnh trên tương đương với
+
+    if (condition)
+        variable = value1;
+    else
+        variable = value2;
+    let isAdult = (age < 18) ? "Too young": "Old enough";
+    //isAdult = "Too young" nếu age nhỏ hơn 18
+    //isAdult = "Old enough" nếu age lớn hơn hoặc bằng 18
+    </pre>
+    <h1>5.Toán tử TypeOf</h1>
+    <pre>
+    let a = 1;
+    let b = "Hi";
+    let c = true;
+    let d = null;
+    let e;
+        
+    console.log(typeof(a)); // trả về number
+    console.log(typeof(b)); // trả về string
+    console.log(typeof(c)); // trả về boolean
+    console.log(typeof(d)); // trả về object
+    console.log(typeof(e)); // trả về undefined
+    console.log(typeof(f)); // trả về undefined
+    </pre>
+    <h1>6.Độ Ưu Tiên Của Các Toán Tử</h1>
+    <pre>
+      <i>Kiểu toán tử</i>                             <i>Các toán tử đơn</i>
+    - Gán                         = += -= *= /= %= < <= > >= >>> &= ^= |=
+    - Điều kiện                   ?:
+    - Logic-or                    ||
+    - Logic-and                   &&
+    - Bằng/không bằng             == !=
+    - Quan hệ                     < <= > >=
+    - Dịch bit                    >> >> >>>
+    - cộng/trừ                    + -
+    - Nhân/chia                   * /
+    - Phủ định/tăng               !~ - ++ -- typeof void
+    - Nhóm                        ()
+    </pre>
+    <h1>7.Hàm</h1>
+    <pre>
+    - Nhóm các câu lệnh để thực hiện một chức năng nào đó
+    - Phân chia mã lệnh thành nhiều các phần nhỏ
+    - Các loại hàm: 
+        + Hàm được định nghĩa trước
+        + Hàm do người dùng định nghĩa
+
+    function average(a,b,c){ // đối số truyền vào dữ liệu
+        let total;           1//
+        total = a + b + c;   2// 1,2 các câu lệnh thực thi trong hàm
+        return total/3; // giá trị trả về(không bắt buộc)
+    }
+    </pre>
+  </body>
+</html>

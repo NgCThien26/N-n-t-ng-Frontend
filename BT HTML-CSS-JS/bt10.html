@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    button{
+        width: 40px;
+        margin: 2px 5px;
+    }
+
+</style>
+<body>
+    <table>
+        <tr>
+            <input type="text" name="" id="scr" size="51px">
+        </tr>
+        <tr>
+            <td><button onclick="inpp(Rad)">Rad</button></td>
+            <td><button onclick="inpp(...)">...</button></td>
+            <td><button onclick="inpp('x!')">x!</button></td>
+            <td><button onclick="inpp('(')">(</button></td>
+            <td><button onclick="inpp(')')">)</button></td>
+            <td><button onclick="inpp('%')">%</button></td>   
+            <td><button onclick="AC()">AC</button></td>
+        </tr>
+        <tr>
+            <td><button  onclick="inpp(Inv)">Inv</button></td>
+            <td><button onclick="inpp(sin)">sin</button></td>
+            <td><button onclick="inpp(In)">In</button></td>
+            <td><button onclick="inpp(7)">7</button></td>
+            <td><button onclick="inpp(8)">8</button></td>
+            <td><button onclick="inpp(9)">9</button></td>
+            <td><button onclick="inpp('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="inpp(π)">π</button></td>
+            <td><button onclick="inpp(cos)">cos</button></td>
+            <td><button onclick="inpp(log)">log</button></td>
+            <td><button onclick="inpp(4)">4</button></td>
+            <td><button onclick="inpp(5)">5</button></td>
+            <td><button onclick="inpp(6)">6</button></td>
+            <td><button onclick="inpp('*')">*</button></td>           
+        </tr>
+        <tr>
+            <td><button onclick="inpp(e)">e</button></td>
+            <td><button onclick="inpp(tan)">tan</button></td>
+            <td><button onclick="inpp('√')">√</button></td>
+            <td><button onclick="inpp(1)">1</button></td>
+            <td><button onclick="inpp(2)">2</button></td>
+            <td><button onclick="inpp(3)">3</button></td>
+            <td><button onclick="inpp('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="inpp(Ans)">Ans</button></td>
+            <td><button onclick="inpp(EXP)">EXP</button></td>
+            <td><button onclick="inpp(x^y)">x^y</button></td>
+            <td><button onclick="inpp(0)">0</button></td>
+            <td><button onclick="inpp('.')">.</button></td>
+            <td><button onclick="tinh()">=</button></td>
+            <td><button onclick="inpp('+')">+</button></td>
+
+        </tr>
+    </table>
+    <script>
+        function inpp(x){
+            document.getElementById('scr').value += x
+        }
+        function tinh(){
+            let pheptinh = document.getElementById('scr').value;
+            document.getElementById('scr').value = eval(pheptinh);
+        }
+        function AC(){
+            document.getElementById('scr').value = " ";
+        }
+    </script>
+</body>
+</html>

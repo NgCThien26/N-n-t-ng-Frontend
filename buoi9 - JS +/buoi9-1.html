@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Cơ Bản 01</title>
+  </head>
+  <style>
+    .soA,
+    .soB,
+    .ketqua {
+      color: red;
+      font-size: 1.2rem;
+    }
+  </style>
+  <body>
+    <h1>Toán + - * / %</h1>
+    <script>
+      let a = 35;
+      let b = 10;
+
+      let tong = a + b;
+      let hieu = a - b;
+      let thuong = a / b;
+      let tich = a * b;
+      let phantram = a % b;
+      // '%' cũng tương tự (chia lấy số dư)
+
+      document.write("Số a là: " + a + "<br/>");
+      document.write("Số b là: " + b + "<br/>");
+      // document.write('Kết quả a + b là: ' + tong)
+
+      document.write(
+        'Tổng của <span class="soA">' +
+          a +
+          '</span> + <span class="soB">' +
+          b +
+          '</span> = <span class="ketqua">' +
+          tong +
+          "</span><br/>"
+      );
+      document.write(
+        'Hiệu của <span class="soA">' +
+          a +
+          '</span> - <span class="soB">' +
+          b +
+          '</span> = <span class="ketqua">' +
+          hieu +
+          "</span><br/>"
+      );
+      document.write(
+        'Thương của <span class="soA">' +
+          a +
+          '</span> / <span class="soB">' +
+          b +
+          '</span> = <span class="ketqua">' +
+          thuong +
+          "</span><br/>"
+      );
+      document.write(
+        'Tích của <span class="soA">' +
+          a +
+          '</span> * <span class="soB">' +
+          b +
+          '</span> = <span class="ketqua">' +
+          tich +
+          "</span><br/>"
+      );
+      document.write(
+        'Phần trăm lấy dư của <span class="soA">' +
+          a +
+          '</span> % <span class="soB">' +
+          b +
+          '</span> = <span class="ketqua">' +
+          phantram +
+          "</span>"
+      );
+    </script>
+  </body>
+</html>

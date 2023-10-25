@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery</title>
+  </head>
+  <body>
+    <h1>Học HQuery</h1>
+    <pre>
+    Cú Pháp: 
+        $(selector).action()
+
+    Cú Pháp:
+    $(document).ready(function(){
+        //jQuery methods go here...
+    })
+    - ready() Đây là bộ quản lý sự kiện cơ bản của Jquery. 
+    Hiểu đơn giản thì nó cũng là một sự kiện trong jquery, 
+    được kích hoạt khi tài liệu html của trang web được load xong và cây DOM được tạo thành.
+    </pre>
+    <br /><br />
+    <h2 class="tieude" style="width: 250px; height: 40px;">Nội Dung H2</h2>
+    <h3 class="tieude" style="width: 250px; height: 40px;">Nội Dung H3</h3>
+    <h4>Nội Dung H4</h4>
+    <button type="button" name="btnDoiMau" id="btnDoiMau">Đổi Màu</button>
+    <button type="button" name="btnAn" id="btnAn">Ẩn</button>
+    <button type="button" name="btnHien" id="btnHien">Hiện</button>
+    <select name="slChonMau" id="slChonMau">
+      <option value="">Vui lòng chọn màu</option>
+      <option value="#FFAAAA">Màu đỏ</option>
+      <option value="#A2C563">Màu xanh chuối</option>
+      <option value="#734C8F">màu tím than tre</option>
+    </select>
+
+    
+
+    <!-- liên kết thư viện JQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+
+    <script>
+      $(document).ready(function () {
+        $("#slChonMau").on("change", function () {
+          //lấy giá trị của opt mà người dùng đang chọn
+          //c1. dùng js
+          // let maunen = document.getElementById('slChonMau').value;
+          //c2. dùng jQuery
+          // let maunen = $('#slMauNen').value;
+          //c3. dùng this
+          let maunen = $(this).val();
+          //nhờ jQuery tìm đối tượng có thẻ body
+          $("body").css("background-color", maunen);
+        });
+
+        //$(selector).action()
+        //nhờ JQuery tìm đối tượng nào đó -> yêu cầu thực hiện action()
+
+        //thực hiện với class .tieude
+        // $('.tieude').css('color','red')
+
+        //thực hiện với button, tìm đối tượng có class .tieude -> yêu cầu đổi thuộc tính css của phần tử tìm được
+        $("#btnDoiMau").click(function () {
+          $(".tieude").css("color", "yellow");
+          $(".tieude").css("background-color", "gray");
+          $(".tieude").css('font-size', '2rem');
+        });
+
+        //nhờ JQuery tìm đối tượng id #btnAn
+        $("#btnAn").on("click", function () {
+          // tìm đối tượng h1 -> yêu cần ẩn đi
+          $(".tieude").hide(1500);
+        });
+        //nhờ JQuery tìm đối tượng id #btnHien
+        $("#btnHien").on("click", function () {
+          // tìm đối tượng h1 -> yêu cần hiện ra
+          $(".tieude").show(1500);
+
+          // Điều hướng (redirect)
+        //   location.href = 'https://google.com'
+        //   location.href = '../buoi1.html'
+
+        //mở tab mới
+        window.open('https://google.com', '_blank')
+        window.open('../buoi1.html', '_blank')
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Cơ Bản 01</title>
+  </head>
+  <style>
+    /* CSS2 
+        pseudo-classes: được sử dụng để định nghĩa một trạng thái đặc biệt nào đó của một phần tử được chọn.
+        pseudo-elements:: có thể hiểu là phần tử giả , được sử dụng để tạo một số style đặc biệt của element được chọn.
+       CSS3 
+       pseudo-classes và pseudo-elements đều 1 ':'
+    */
+
+    /* Bộ chọn :visited dùng để chọn các liên kết mà đường dẫn của nó đã được trình duyệt viếng thăm */
+    a:visited {
+      color: red;
+      font-size: 30px;
+    }
+    /* Bộ chọn active trong css được sử dụng để chọn và định kiểu style cho phần tử được click, được nhấp vào */
+    a:active {
+      color: green;
+    }
+    /* Bộ chọn :hover trong CSS là một thuộc tính dùng trong trường hợp muốn thay đổi thuộc tính CSS khi người dùng rê chuột vào thành phần html. */
+    a:hover {
+      color: rgb(123, 16, 112);
+    }
+    /* Pseudo-element :first-line trong CSS sử dụng để thêm một số hiệu ứng đặc biệt cho dòng đầu tiên của một đoạn */
+    p::first-line {
+      text-transform: uppercase;
+      color: red;
+    }
+    a:before {
+      /* unicode character */
+      content: "\2663";
+    }
+    a::after {
+      content: "\2660";
+    }
+    h1{
+      margin: 0px;
+      transition: transform 1s ;
+
+    }
+    h1:hover{
+      color: red;
+      cursor: pointer;
+      transform:translateX(500px);
+    }
+    .box1 {
+      background: rgb(255, 0, 166);
+      width: 50px;
+      height: 5px;
+      /* border-radius: dùng để thiết lập "độ cong" các góc của phần tử HTML */
+      border-radius: 5px;
+      /* Thuộc tính transition xác định một quá trình chuyển đổi khi có một hành động. 
+            transition: giá trị;
+            -moz-transition: giá trị;
+            -webkit-transition: giá trị;
+            -o-transition: giá trị;
+      */
+      /* transition-delay: khoảng thời gian dừng cho mỗi hiệu ứng chuyển đổi. 
+         transition-duration: khoảng thời gian chuyển đổi diễn ra. 
+         transition-property: thuộc tính cần chuyển đổi. 
+         transition-timing-function: tốc độ chuyển đổi diễn ra. */
+      transition: 1s, background 2s;
+      /* Thuộc tính transition-delay sử dụng để xác định khoảng thời gian trì hoãn giữa thời gian một thuộc tính thay đổi và lúc chuyển tiếp thực sự bắt đầu */
+      /* transition-delay: 1s; */
+      /* transition-timing-function: ease;	Xác định một hiệu ứng của quá trình chuyển đổi với một sự khởi đầu chậm, sau đó nhanh chóng, sau đó kết thúc chậm.
+         transition-timing-function: ease-in;	Xác định một hiệu ứng của quá trình chuyển đổi với một khởi đầu chậm chạp.
+         transition-timing-function: ease-out;	Xác định một hiệu ứng của quá trình chuyển đổi với một kết thúc chậm.
+	       transition-timing-function: ease-in-out;	Xác định một hiệu ứng của quá trình chuyển đổi với một khởi đầu và kết thúc chậm.
+         transition-timing-function: linear;	Xác định một hiệu ứng của quá trình chuyển đổi với cùng một tốc độ từ đầu đến cuối.
+         transition-timing-function: cubic-bezier(n,n,n,n);	Xác định giá trị cho hiệu ứng của quá trình chuyển đổi theo từng giai đoạn, giá trị xác định chỉ có thể từ 0 tới 1. */
+      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      /* transition: all 500ms cubic-bezier(0.000, 1.135, 1.000, -0.175); */
+    }
+    .box1:hover {
+      width: 255px;
+      height: 25px;
+      background: rgb(79, 77, 77);
+      /* cursor CSS là một thuộc tính được dùng để điều chỉnh hay thay đổi kiểu con trỏ của một phần tử HTML */
+      cursor: pointer;
+    }
+    .them{
+      width: 100px;
+      height: 100px;
+      transition: transform 1s;
+      margin-left: 20%;
+    }
+    .them:hover{
+      /* transform: rotate(-90deg); */
+      transform: scale(200%);
+      transition: transform 0.5s;
+
+    }
+  </style>
+  <body>
+    <h1>Bộ chọn trạng thái</h1>
+    <div class="box1"></div>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione dicta
+      explicabo minima laboriosam porro assumenda dolores quas vel, fuga ipsa
+      reiciendis rem sapiente ea temporibus consectetur, voluptatum recusandae,
+      consequuntur officia?
+    </p>
+    <a href="https://google.com.vn">Đi đến Google</a> <br />
+    <a href="https://vnexpress.net">Đi đến VnExpress</a>
+    <a href="tintuc1.html"><img class="them" src="../image/0x0-1680334881652426631999.jpeg" alt=""></a>
+    <br>
+    <a href="https://truyentranh.abc/tap-1.html">Chương 1</a> <br />
+    <a href="https://truyentranh.abc/tap-2.html">Chương 2</a> <br />
+    <a href="https://truyentranh.abc/tap-3.html">Chương 3</a> <br />
+    <a href="https://truyentranh.abc/tap-4.html">Chương 4</a> <br />
+    <a href="https://truyentranh.abc/tap-5.html">Chương 5</a>
+    <hr />
+    <div
+      style="font-size: 25pt; color: red; border: 1px solid red; padding: 10px"
+    >
+      Web
+      <!-- pre phải dùng "border: inherit" để kế thừa thẻ cha thuộc tính border -->
+      <!-- Overloading: pre "font-size" được nạp chồng lên thẻ cha div "font-size" -->
+      
+      <pre style="border: inherit; font-size: 10pt">Cơ Bản 01</pre>
+
+
+      <!-- animation -->
+      <div class="animation"></div>
+    </div>
+    <hr />
+  </body>
+</html>

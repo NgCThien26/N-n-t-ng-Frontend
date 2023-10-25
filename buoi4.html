@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Căn Bản 1</title>
+  </head>
+  <body>
+    <h1>Form Đăng Nhập</h1>
+    <!-- label: nhãn, tiêu đề // kick chuột vào label thì sẽ đưa con trỏ vào input // for(id)  -->
+    <!-- name: tên form
+         method: cách thức gửi dữ liệu
+         action: thuộc tính để thiết lập URL sẽ nhận dữ liệu, là địa chỉ mà dữ liệu của form gửi đến (submit đến, post đến).
+         accept: loại dữ liệu
+         placeholder: trình bày gợi ý nhập
+         required: yêu cầu nhập, không được để trống
+         autofocus: tự động được focus vào khi trình duyệt tải xong trang web
+         title: trình bày gợi ý nhập khi người dùng kích chuột vào ô nhập
+    -->
+    <form name="form_Login" method="post" action="#">
+      <!-- input: ô nhập dữ liệu 1 dòng
+             textarea: ô nhập dữ liệu nhiều dòng
+             hidden: ô nhập dữ liệu ẩn
+             
+        -->
+      <table>
+        <input type="hidden" name="KhoaBiMat" value="123@" />
+        <input type="hidden" name="token" value="NCT_123@" />
+
+        <tr>
+          <td align="right"><label for="">Nhập Tài Khoản:</label></td>
+          <td><input type="text" name="txtTaiKhoan" id="txtTaiKhoan" /></td>
+        </tr>
+        <tr>
+          <td align="right"><label for="">Nhập Mật Khẩu:</label></td>
+          <td><input type="password" name="txtMatKhau" id="txtMatKhau" /></td>
+        </tr>
+        <tr>
+          <td valign="top" align="right"><label for="">Thông Tin:</label></td>
+          <td>
+            <textarea
+              name="txtThongTin"
+              id="txtThongTin"
+              cols="30"
+              rows="10"
+              placeholder="nhập thông tin"
+            ></textarea>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <hr />
+    <!-- "enctype='multipart/form-data là một kiểu mã hóa cho phép các tệp được gửi qua POST -->
+    <form name="frmGopY" method="post" action="#" enctype="multipart/form-data" >
+      <table border="1" cellspacing="0" width="100%" cellpadding="7px" >
+        <thead>
+          <tr style="background-color: aqua">
+            <td colspan="2"><font>Nhập thông tin gợi ý</font></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="right" width="200px">Chủ đề:</td>
+            <!-- selected: xét giá trị mặc định
+                 multiple: có thể chọn nhiều option
+            -->
+            <td><select name="slChuDe" id="slChuDe" style="width: 400px;">
+              <option value="" selected>Chọn góp ý</option>
+              <option value="dichvu">Góp ý về dịch vụ</option>
+              <option value="website">Góp ý về website</option>
+              <option value="sanpham">Góp ý về sản phẩm</option>
+              <option value="khac">Góp ý khác</option>
+            </select><br><br>
+            <select name="slChuDeChonNhieu" id="slChuDeChonNhieu" multiple style="width: 400px;">           
+              <option value="dichvu">Góp ý về dịch vụ</option>
+              <option value="website">Góp ý về website</option>
+              <option value="sanpham">Góp ý về sản phẩm</option>
+              <option value="khac">Góp ý khác</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right"><label for="txtSearch">Tìm Kiếm:</label></td>
+            <td><input type="search" name="txtSearch" id="txtSearch" autofocus></td>
+          </tr>
+          <tr>
+            <td align="right"><label for="urlWeb">Trang Web của bạn:</label></td>
+            <td><input type="url" name="urlWeb" id="urlWeb" title="Vui lòng nhập đúng trang web của bạn"></td>
+          </tr>
+          <tr>
+            <td align="right"><label for="txtTuoi">Tuổi:</label></td>
+            <td><input type="number" name="txtTuoi" id="txtTuoi" >
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Chọn Màu Nền:</td>
+            <td><input type="color" name="clNen" id="clNen"></td>
+          </tr>
+          <tr>
+            <td align="right">Âm Lượng:</td>
+            <td><input type="range" name="rgVolume" id="rgVolume" min="0" max="100" value="10"></td>
+          </tr>
+          <tr>
+            <td align="right">Ngày Sinh:</td>
+            <td><input type="date" name="txtNgaySinh" id="txtNgaySinh"><br>
+                <input type="time" name="txtGio" id="txtGio"> <br>
+                <input type="datetime-local" name="txtNgayGio" id="txtNgayGio">
+
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><label for="">Hình ảnh:</label></td>
+            <td>
+              <input type="file" name="fAvatar" id="fAvatar">
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><label for="HoTen">Họ và tên:</label></td>
+            <td>
+              <input type="text" name="HoTen" id="HoTen" required /><font
+                style="color: red"
+              >
+                *</font
+              >
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><label for="DiaChi">Địa chỉ:</label></td>
+            <td>
+              <input type="text" name="DiaChi" id="DiaChi" required /><font
+                style="color: red"
+              >
+                *</font
+              >
+            </td>
+          </tr>
+          <!-- list // datalist - option -->
+          <tr>
+            <td align="right">Thành Phố:</td>
+            <td><input type="text" name="txtThanhPho" id="txtThanhPho" list="dataThanhPho">
+              <datalist id="dataThanhPho">
+                <option value="Huế"></option>
+                <option value="Đà Nẵng"></option>
+                <option value="Hồ Chí Minh"></option>
+                <option value="Quảng Bình"></option>
+                <option value="Cần Thơ"></option>
+                <option value="Hà Nội"></option>
+                <option value="Cao Bằng"></option>
+              </datalist><font
+              style="color: red"
+            >
+              *</font
+            >
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><label for="Telephone">Điện thoại:</label></td>
+            <td>
+              <!-- pattern: biểu thức chính quy // một nhóm các ký tự, ký hiệu viết ra theo quy luật tạo thành mẫu (pattern), nó được sử dụng để tìm kiếm văn bản -->
+              <input type="tel" name="Telephone" id="Telephone" pattern="[0-9]{1-15}"/><font
+                style="color: red" required
+              >
+                *</font
+              >
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><label for="Email">Email:</label></td>
+            <td>
+              <input type="email" name="Email" id="Email" /><font
+                style="color: red" required
+              >
+                *</font
+              >
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Bạn biết sách Salomon qua:</td>
+            <td></td>
+          </tr>
+          <tr height="50px">
+            <td align="right">Bạn có giao dịch qua Salomon chưa?</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td align="right"><label for="Noidung">Nội dung:</label></td>
+            <td>
+              <textarea
+                name="Noidung"
+                id="Noidung"
+                cols="50"
+                rows="5"
+                placeholder="Nội dung của bạn"
+                required
+              ></textarea
+              ><font style="color: red"> *</font>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Sở Thích:</td>
+            <!-- checkbox: chọn 1 hoặc nhiều
+                 radio: chỉ được chọn 1 // phải cùng name 
+            -->
+            <td>
+                <!-- <input type="checkbox" name="SoThich" id="SoThich1" value="game"><label for="SoThich1">Game</label> <br> --> 
+                <label><input type="checkbox" name="SoThich" id="SoThich1" value="game"><label for="SoThich1">Game</label> <br>
+                <input type="checkbox" name="SoThich" id="SoThich2" value="footbal"><label for="SoThich2">Bóng Đá</label> <br>
+                <input type="checkbox" name="SoThich" id="SoThich3" value="film"><label for="SoThich3">Xem Phim</label> <br>
+                <input type="checkbox" name="SoThich" id="SoThich4" value="dulich"><label for="SoThich4">Du Lịch</label>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Giới Tính:</td>
+            <td>
+                <label><input type="radio" name="gender" id="gender1" value="male">Male</label> <br>
+                <label><input type="radio" name="gender" id="gender2" value="female">Female</label> <br>
+                <label><input type="radio" name="gender" id="gender3" value="khac">Khác</label>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>
+              <input
+                type="submit"
+                value="Cập Nhật"
+                name="btnGuiGopY"
+                id="btnGuiGopY"
+              />
+              <input
+                type="reset"
+                value="Nhập Lại"
+                name="btnNhapLai"
+                id="btnNhapLai"
+              />
+              <!--onclick="location.href='...'" : thuộc về Javascript  -->
+              <input type="button" value="Đi đến trang chủ" id="btnTrangChu" onclick="location.href='./buoi2/buoi2.html'">
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </form>   
+    <hr>
+    <!-- 
+         iframe: nhúng HTML, hình ảnh, video hay trang web khác vào website của mình
+         target: xác định cửa sổ hiển thị cho thẻ liên kết
+    -->
+    <a href="buoi2/buoi2.html"  target="frameWeb">Học Table</a>
+    <a href="buoi3.html" target="frameWeb">Học Table 2</a>
+ <br>
+    <iframe src="./buoi3.html" name="frameWeb" frameborder="0" width="100%" height="400px"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d919.0059103987153!2d107.62367986311166!3d16.48886251333179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3141a0571fb981c1%3A0x7540264227501853!2zROG6oSBMw6ogQ2jDoW5oLCBUaOG7p3kgVsOibiwgVHguIEjGsMahbmcgVGjhu6d5LCBUaOG7q2EgVGhpw6puIEh14bq_LCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1694859525546!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mbEZ_9dhM_Y?si=aHKJvivveebLIcN2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+  </body>
+</html>

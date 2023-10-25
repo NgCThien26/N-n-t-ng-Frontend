@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web cơ bản 01</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .table-datmon,
+    tr,
+    td {
+      width: 400px;
+      padding: 5px;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    #btnDatHang {
+      padding: 3px;
+      border-radius: 3px;
+      margin-left: 150px;
+    }
+    #btnDatHang:hover {
+      background-color: rgb(235, 163, 231);
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h1 style="text-align: center">Form Đặt Đồ Ăn / Đồ Uống</h1>
+    <form action="#" method="post" id="frmDatMon" name="frmDatMon">
+      <table class="table-datmon">
+        <tr>
+          <td style="width: 250px">
+            <label for=""
+              >Họ và Tên<span class="batbuoc" style="color: red">*</span></label
+            >
+          </td>
+          <td><input type="text" name="txtHoTen" id="txtHoTen" /></td>
+        </tr>
+        <tr>
+          <td style="width: 250px">
+            <label for=""
+              >Địa Chỉ <span class="batbuoc" style="color: red">*</span></label
+            >
+          </td>
+          <td><input type="text" name="txtDiaChi" id="txtDiaChi" /></td>
+        </tr>
+        <tr>
+          <td style="width: 250px">
+            <label for=""
+              >SĐT <span class="batbuoc" style="color: red">*</span></label
+            >
+          </td>
+          <td><input type="tel" name="txtSdt" id="txtSdt" /></td>
+        </tr>
+        <tr>
+          <td style="width: 250px">
+            <label for=""
+              >Lựa Chọn Giao Hàng
+              <span class="batbuoc" style="color: red">*</span></label
+            >
+          </td>
+          <td>
+            <label for="rdLuaChonGiaoHang_1"
+              ><input
+                type="radio"
+                name="rdLuaChonGiaoHang"
+                id="rdLuaChonGiaoHang_1"
+                value="now"
+              />Giao Hàng Ngay (30k)</label
+            ><br />
+            <label for="rdLuaChonGiaoHang_2"
+              ><input
+                type="radio"
+                name="rdLuaChonGiaoHang"
+                id="rdLuaChonGiaoHang_2"
+                value="delay"
+              />Giao Hàng Sau 1H (Free)</label
+            >
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 250px">
+            <label for="">Topping</label>
+          </td>
+          <td>
+            <label for="chkTopping_1"
+              ><input
+                type="checkbox"
+                name="chkTopping"
+                id="chkTopping_1"
+                value="5000"
+              />Bánh Flan (5k) </label
+            ><br />
+            <label for="chkTopping_2"
+              ><input
+                type="checkbox"
+                name="chkTopping"
+                id="chkTopping_2"
+                value="3000"
+              />Sữa Thêm (3k) </label
+            ><br />
+            <label for="chkTopping_3"
+              ><input
+                type="checkbox"
+                name="chkTopping"
+                id="chkTopping_3"
+                value="5000"
+              />Trân Châu (4k) </label
+            ><br />
+            <label for="chkTopping_4"
+              ><input
+                type="checkbox"
+                name="chkTopping"
+                id="chkTopping_4"
+                value="5000"
+              />Phô Mai (6k)
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button
+              type="button"
+              name="btnDatHang"
+              id="btnDatHang"
+              onclick="laythongtindathang();"
+            >
+              Đặt Hàng
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <br />
+    <div
+      id="vungketqua"
+      style="border: 1px solid red; width: 400px; height: 300px"
+    ></div>
+    <script>
+      function laythongtindathang() {
+        //1. thu thập thông tin người dùng đã nhập trên form
+        let HoTen = document.getElementById("txtHoTen").value;
+        let DiaChi = document.getElementById("txtDiaChi").value;
+        let SĐT = document.getElementById("txtSdt").value;
+
+        //1.1 thu thập dữ liệu của radio
+        //tạo biến rỗng để lưu trữ
+        let LuaChonGiaoHang = " ";
+
+        //tìm những phần tử có cùng name - mỗi phần tử sẽ có 1 chỉ số index
+        let listElmLuaChonGiaoHang =
+          document.getElementsByName("rdLuaChonGiaoHang");
+        // dùng vòng lặp nhờ list
+        let tongsophantuRD = listElmLuaChonGiaoHang.length;
+        for (let i = 0; i < tongsophantuRD; i++) {
+          let phantuDangXet = listElmLuaChonGiaoHang[i];
+          // xét xem phần tử có được chọn hay không
+          if (phantuDangXet.checked) {
+            LuaChonGiaoHang = phantuDangXet.value;
+          }
+        }
+        //1.2 thu thập dữ liệu của checkbox
+        //tạo biến rỗng để lưu trữ
+        let LuaChonTopping = " ";
+        //tìm những phần tử có cùng name - mỗi phần tử sẽ có 1 chỉ số index
+        let listElmLuaChonTopping = document.getElementsByName("chkTopping");
+        // dùng vòng lặp nhờ list
+        let tongsophantuChk = listElmLuaChonTopping.length;
+        for (let i = 0; i < tongsophantuChk; i++) {
+          phantuDangXet = listElmLuaChonTopping[i];
+          // xét xem phần tử có được chọn hay không
+          if (phantuDangXet.checked) {
+            LuaChonTopping += phantuDangXet.value + ",";
+          }
+        }
+
+        //2 kiểm tra ràng buộc validation
+        let error = "";
+        //2.1 kiểm tra dữ liệu ô họ tên
+        //validate họ tên
+        //Rule 1: Required
+        if (HoTen == "") {
+          error += "Họ tên không được rỗng. Vui lòng nhập đầy đủ họ tên <br/>";
+        }
+        //Rule 2: Min 3
+        else if (HoTen.length < 3) {
+          error += "Họ tên phải nhiều hơn 3 kí tự <br/>";
+        }
+        //Rule 3: Max 25
+        else if (HoTen.length > 25) {
+          error += "Họ tên phải ít hơn 25 kí tự <br/>";
+        }
+        //2.2 kiểm tra ô địa chỉ
+        //validate địa chỉ
+        if (DiaChi == "") {
+          error += "Vui lòng nhập địa chỉ <br/>";
+        }
+        //2.3 kiểm tra ô sdt
+        //validate sdt
+        if (SĐT == "") {
+          error += "Vui lòng nhập SĐT <br/>";
+        }
+        //2.4 kiểm tra ô lựa chọn giao hàng
+        //validate lựa chọn giao hàng
+        if (LuaChonGiaoHang == " ") {
+          error += "Vui lòng chọn hình thức giao hàng <br/>";
+        }
+
+        // xem xét hiển thị cái gì
+        if (error == "") {
+          //3.1 In/hiển thị kết quả ra màn hình
+          let htmlThongTin = " ";
+          htmlThongTin +=
+            "Cảm ơn bạn đã đặt hàng shop chúng tôi. Thông tin của bạn vừa đặt là : ";
+          htmlThongTin += "<ul>";
+          htmlThongTin += "<li>Họ tên: " + HoTen + " </li>";
+          htmlThongTin += "<li>Địa Chỉ: " + DiaChi + " </li>";
+          htmlThongTin += "<li>Sđt: " + SĐT + " </li>";
+          if (LuaChonGiaoHang == "now") {
+            htmlThongTin +=
+              "<li>Bạn đã chọn hình thức giao hàng ngay (30k)</li>";
+          } else if (LuaChonGiaoHang == "delay") {
+            htmlThongTin +=
+              "<li>Bạn đã chọn hình thức giao hàng sau 1h (Free)</li>";
+          }
+          htmlThongTin +=
+            "<li>Bạn đã lựa chọn các topping, sẽ được tính thêm giá sau: " +
+            LuaChonTopping +
+            " </li>";
+          //3.2 tìm đối tượng và chèn vào trong html mong muốn
+          document.getElementById("vungketqua").innerHTML = htmlThongTin;
+        }else {
+            document.getElementById("vungketqua").innerHTML = error
+        }
+      }
+    </script>
+  </body>
+</html>

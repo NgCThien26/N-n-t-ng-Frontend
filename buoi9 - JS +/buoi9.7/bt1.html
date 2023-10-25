@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Cơ Bản 01</title>
+  </head>
+  <body>
+    <h1>IF - ELSE</h1>
+    <script>
+      // cách 1
+      // let a = +prompt("Vui lòng nhập điểm thi : ");
+
+      // if (isNaN(a)) {
+      //   alert("vui lòng nhập giá trị số !");
+      // } else if (a < 0 || a > 10) {
+      //   alert("Không xét, vui lòng nhập lại!");
+      // } else if (a >= 0 && a < 4) {
+      //   alert("Rớt!");
+      // } else if (a >= 4 && a < 5) {
+      //   alert("Trung bình!");
+      // } else if (a >= 5 && a < 7) {
+      //   alert("Khá!");
+      // } else if (a >= 7 && a < 9) {
+      //   alert("Giỏi!");
+      // } else if (a >= 10 && a <= 10) {
+      //   alert("Xuất sắc!");
+      // }
+
+      // cách 2
+      //khai báo hàm
+      function ketqua(diem) {
+        //xét kết quả
+        if (isNaN(diem)) {
+          alert("vui lòng nhập giá trị số !");
+        } else if (diem < 0 || diem > 10) {
+          alert("Không xét, vui lòng nhập lại!");
+        } else if (diem >= 0 && diem < 4) {
+          alert("Rớt!");
+        } else if (diem >= 4 && diem < 5) {
+          alert("Trung bình!");
+        } else if (diem >= 5 && diem < 7) {
+          alert("Khá!");
+        } else if (diem >= 7 && diem < 9) {
+          alert("Giỏi!");
+        } else {
+          alert("Xuất sắc!");
+        }
+      }
+      //thu nhập thông tin
+      let diemthi = prompt("Vui lòng nhập điểm : ");
+      //gọi hàm xét kết quả
+      ketqua(diemthi);
+    </script>
+  </body>
+</html>

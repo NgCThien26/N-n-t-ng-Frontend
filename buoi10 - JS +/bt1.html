@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">số A: </label>
+    <input type="text" id="soA"></input>
+    <label for="">số B: </label>
+    <input type="text" id="soB"></input>
+    <button id="btnketqua" onclick="tinhtoan();">Kết Quả</button>
+    <p>Kết quả là : </p>
+    <p style="color: red;" id="ketqua"></p>
+    <script>
+      function tinhtoan(){
+        let soA = +document.getElementById('soA').value;
+      let soB = +document.getElementById('soB').value;
+
+      let tong = soA + soB;
+      let hieu = soA - soB;
+      let thuong = soA / soB;
+      let tich = soA * soB;
+
+      let html = ' ';
+       html = html + 'Tổng là : ' + tong +'<br/>'
+       html = html + 'Hiệu là : ' + hieu +'<br/>'
+       html += 'Thương là : ' +thuong +'<br/>'
+       html += 'Tích là : ' +tich +'<br/>'
+      
+       let ketqua = document.getElementById('ketqua').innerHTML = html;
+      }
+    </script>
+  </body>
+</html>

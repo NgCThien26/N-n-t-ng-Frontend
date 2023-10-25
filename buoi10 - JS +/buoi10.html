@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Cơ Bản 01</title>
+  </head>
+  <body onload="hienthi();">
+    <div id="vungquangcao"></div>
+    <!-- liên kết script trước khi sử dụng   -->
+    <h1 id="tieude">Chương trình tính toán</h1>
+    <pre>
+    Các sự kiện thông thường của JS
+        - onClick           - onMouseOut
+        - onChange          - onLoad
+        - onFocus           - onSubmit
+        - onBlur            - onMouseDown
+        - onMouseOver       - onMouseUp
+    </pre>
+    <!-- --------------------------- -->
+    <hr />
+    <h2>onClick / onFocus / onBlur</h2>
+    <form action="#" name="frmTinhToan" id="frmTinhToan" method="post">
+      <label for="txtA">số A </label>
+      <input
+        type="text"
+        name="txtA"
+        id="txtA"
+        onfocus="thaydoimaunen();"
+        onblur="rec_maunen();"
+      />
+      <br />
+      <br />
+      <label for="txtB">số B </label>
+      <input type="text" name="txtB" id="txtB" />
+      <br /><br />
+      <button
+        type="button"
+        id="btntinhtoan"
+        onclick="tinhtoan();"
+        onmouseover="thaydoi();"
+        onmouseout="phuchoi();"
+      >
+        Tính Toán
+      </button>
+    </form>
+    <br />
+    <div
+      id="vungketqua"
+      style="width: 200px; height: 100px; border: 1px solid red; padding: 5px"
+    ></div>
+    <br />
+    <!--  -------------------------  -->
+    <hr />
+    <h2>onChange</h2>
+    <label for="slHinhThucHoc">Hình thức học </label>
+    <select name="slHinhThucHoc" id="slHinhThucHoc" onchange="canhbao();">
+      <option value="hinhthuc">Vui lòng chọn hình thức học</option>
+      <option value="onl">Online 100%</option>
+      <option value="off">Offline 100%</option>
+    </select>
+    <br /><br />
+    <hr />
+    <br />
+    <script>
+      // onClick
+      //1. khai báo hàm
+      function tinhtoan() {
+        //2. thu thập dữ liệu mà người dùng nhập trên form
+        let soA = +document.getElementById("txtA").value;
+        let soB = parseInt(document.getElementById("txtB").value);
+
+        //3. tính toán
+        let tong = soA + soB;
+        let hieu = soA - soB;
+        let tich = soA * soB;
+        let thuong = soA / soB;
+
+        //4. hiển thị kết quả ra màn hình
+        // document.write("Tổng là : " + tong + "<br/>");
+        // document.write("Hiệu là : " + hieu + "<br/>");
+        // document.write("Thương là : " + thuong + "<br/>");
+        // document.write("Tích là : " + tich + "<br/>");
+
+        //
+        let ketqua = "";
+        //ghép chuỗi: giá trị chuỗi hiện tại + chuỗi tiếp theo
+        ketqua = ketqua + "Tổng là : " + tong + "<br/>";
+        ketqua = ketqua + "Hiệu là : " + hieu + "<br/>";
+        ketqua += "Tích là : " + tich + "<br/>";
+        ketqua += "Thương là : " + thuong + "<br/>";
+        let ketquatong = document.getElementById("vungketqua").innerHTML =
+          ketqua;
+      }
+
+      // onChange
+      //1. khai báo hàm
+      function canhbao() {
+        //2. thu thập thông tin giá trị người dùng đang chọn
+        let hinhthuchoc = document.getElementById("slHinhThucHoc").value;
+
+        //3. xử lý logic
+        if (hinhthuchoc == "hinhthuc") {
+          alert("🐱‍🏍 Vui lòng chọn hình thức học!");
+        } else if (hinhthuchoc == "onl") {
+          alert("Hình thức học online thì ONLINE !");
+        } else if (hinhthuchoc == "off") {
+          alert("Hình thức học offline thì OFFLINE !");
+        }
+      }
+
+      //onFocus
+      //1. khai báo hàm
+      function thaydoimaunen() {
+        //2.1 tìm đối tượng mà bạn muốn thao tác
+        let eleA = document.getElementById("txtA");
+        eleA.style.fontSize = "20px";
+        eleA.style.color = "red";
+        //2.2 tìm đối tượng mà bạn muốn thao tác
+        let eleTieuDe = document.getElementById("tieude");
+        eleTieuDe.innerHTML = "Đang Focus HTML";
+        eleTieuDe.style.color = "blue";
+      }
+      function rec_maunen() {
+        //2.1 tìm đối tượng mà bạn muốn thao tác
+        let eleA = document.getElementById("txtA");
+        eleA.style.fontSize = "10px";
+        eleA.style.color = "black";
+      }
+
+      //onmouseover
+      function thaydoi() {
+        //1. tìm đối thượng mà bạn muốn thao tác
+        let btntinhtoan = document.getElementById("btntinhtoan");
+        btntinhtoan.style.background = "red";
+        btntinhtoan.style.color = "yellow";
+      }
+      //onmouseout
+      function phuchoi() {
+        //1. tìm đối thượng mà bạn muốn thao tác
+        let btntinhtoan = document.getElementById("btntinhtoan");
+        btntinhtoan.style.background = "blue";
+        btntinhtoan.style.color = "white";
+      }
+      //onload
+      function hienthi(){
+        //1. tìm đối thượng mà bạn muốn thao tác
+        let divquangcao = document.getElementById('vungquangcao')
+
+        let html = '<img src="../image/0x0-1680334881652426631999.jpeg" style="width="200px" height="100px"/> '
+        
+        divquangcao.innerHTML = html;
+      }
+    </script>
+  </body>
+</html>

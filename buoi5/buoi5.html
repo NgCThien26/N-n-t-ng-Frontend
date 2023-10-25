@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- cách 1: sử dụng file rời Extarnal File  -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- link:  rel / type / href -->
+    <title>Web Cơ Bản 01</title>
+    <!-- cách 2: sử dụng Internal CSS -->
+    <style>
+        h5{
+            color: rgb(9, 116, 79);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #id1{
+            color: darkred;
+            width: 130px;
+            border: 1px solid yellowgreen;
+            padding-left: 10px;
+            margin-left: 45%;
+            background-color: blanchedalmond;
+        }
+        .class1{
+            width: 140px;
+            color: hotpink;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 1px solid black;
+            padding-left: 10px;  
+            margin-left: 45%;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- cách 3: ngay trên từng phần tử -->
+    <h1>Học CSS bài 1</h1>
+    <h2 style="color: coral;">Nội dung h2</h2>
+    <h3>Nội dung h3</h3>
+    <h4 style="color: rgb(150, 110, 11);">Nội dung h4</h4>
+    <h5>Nội dung h5</h5>
+    <!-- sử dụng id (chỉ được áp dụng 1 phần tử) -->
+    <h2 id="id1">Nội dung id</h2>
+    <!--  sử dụng class (có thể áp dụng nhiều phần tử)-->
+    <h3 class="class1">Nội dung class</h3>
+    <h3 class="class1">Nội dung class</h3>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Cơ Bản 01</title>
+</head>
+<style>
+    .menu-lv1{
+    margin: 0px;
+    padding: 0px;
+}
+.menu-lv1 li{
+    /* list-style-type trong CSS giúp bạn xác định Bullet Style cho một List */
+    list-style: none;
+    /* Float CSS: sử dụng để chuyển một phần tử sang góc trái hoặc góc bên phải của không gian bao quanh nó */
+    float: left;
+    /* Position relative: vị trí của phần tử sẽ tương đối so với vị trí tĩnh bạn đặt và khoản không gian xung quanh phần tử sẽ được giữ nguyên */
+    position: relative;
+}
+.menu-lv1 li a{
+    /* text-decoration-style: xác định kiểu đường gạch chân, gạch trên hoặc gạch xuyên qua được áp dụng cho văn bản.  */
+    text-decoration: none;
+    padding: 10px;
+}
+.menu-lv1 li a:hover{
+    color: #000000;
+    background-color: rgb(152, 152, 250);
+}
+.menu-lv1 li:hover ul{
+    /* Display CSS cho phép bạn xác định sự xuất hiện của các phần tử trang một cách khác đi so với cài đặt mặc định của chúng. */
+    display: block;
+    padding: 0px;
+    /* Position Absolute hỗ trợ xác định tọa độ đối với thành phần theo một thẻ cha Relative. */
+    position: absolute;
+    top: 100%;
+    width: 250px;
+}
+.submenu-lv2 {
+    display: none;
+    padding: 0px;
+}
+.submenu-lv2 li{
+    float: none;
+}
+.submenu-lv2 li a{
+    padding: 0;
+    display: block;
+    padding: 5px 0;
+    padding-left: 20px;
+}
+.submenu-lv2 li{
+    background-color: beige;
+}
+/* hover trong CSS là một thuộc tính dùng trong trường hợp muốn thay đổi thuộc tính CSS khi người dùng rê chuột vào thành phần html */
+.submenu-lv2 li a:hover{
+    background: rgb(233, 233, 128);
+}
+</style>
+<body>
+    <ul class="menu-lv1">
+        <li><a href="trang-chu.html">Trang Chủ</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a>
+            <ul class="submenu-lv2">
+                <li><a href="lich-su.html">Lịch Sử Phát Triển</a></li>
+                <li><a href="he-thong.html">Hệ Thống Chi Nhánh</a></li>
+                <li><a href="hinh-thuc.html">Hình Thức Thanh Toán</a></li>
+            </ul>
+        </li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+        <li><a href="gop-y.html">Góp Ý</a></li>
+        <li><a href="quan-tri.html">Quản Trị</a>
+        <ul class="submenu-lv2">
+            <li><a href="san-pham.html">Danh Mục Sản Phẩm</a></li>
+            <li><a href="nsx.html">Danh Mục Nhà Sản Xuất</a></li>
+            <li><a href="thanh-toan.html">Danh Mục Hình Thức Thanh Toán</a></li>
+        </ul>
+    </li>
+        <li><a href="dang-ky.html">Đăng Ký</a></li>
+        <li><a href="dang-nhap.html">Đăng Nhập</a></li>
+    </ul>
+    <br>
+    <h1>Nội Dung</h1>
+    <ul class="menu-lv1">
+        <li><a href="#">Chuyên mục 1</a>
+            <ul class="submenu-lv2">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Chuyên mục 2</a></li>
+        <li><a href="#">Chuyên mục 3</a></li>
+    </ul>
+</body>
+</html>
